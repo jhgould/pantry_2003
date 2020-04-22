@@ -37,4 +37,11 @@ class RecipeTest < Minitest::Test
     assert_equal array, @recipe1.ingredients
   end
 
+  def test_it_can_calc_total_cals
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient2, 8)
+
+    assert_equal 440, @recipe1.total_calories
+  end
+
 end
